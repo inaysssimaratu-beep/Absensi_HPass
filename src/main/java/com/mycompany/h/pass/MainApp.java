@@ -28,5 +28,11 @@ public class MainApp {
                 JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
+        p.setKamar("Asrama-01");
+        p.setFakultas("Teknik");
+
+        // Print hasil test
+        System.out.println("Data Berhasil Dibuat:");
+        System.out.println(p.toString());
     }
 }
