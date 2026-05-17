@@ -1,11 +1,14 @@
 package com.mycompany.h.pass.objects;
 
 import java.util.List;
+import org.bson.conversions.Bson;
 
 public interface BaseDAO<T> {
     void save(T entity);
-    void update(int index, T entity);
-    void delete(int index);
+    void update(Bson filter, T entity);
+    void delete(Bson filter);
+    
     List<T> findAll();
-    T findByIndex(int index);    
+    T findOne(Bson filter); 
+    List<T> findMany(Bson filter); 
 }
