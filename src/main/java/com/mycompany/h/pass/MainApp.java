@@ -1,32 +1,32 @@
 package com.mycompany.h.pass;
 
-import com.mycompany.h.pass.objects.Penghuni; DwiJava
-import com.mycompany.h.pass.objects.GenericDAO;
+import com.mycompany.h.pass.objects.MongoManager;
+import com.mycompany.h.pass.view.LoginView;
+import javax.swing.JOptionPane;
 
 public class MainApp {
     public static void main(String[] args) {
-        // 1. Inisialisasi GenericDAO khusus untuk objek Penghuni
-        GenericDAO<Penghuni> penghuniDAO = new GenericDAO<>("penghuni", Penghuni.class);
+        try {
+            // 1. Inisialisasi Koneksi ke MongoDB
+            System.out.println("Memulai sistem H-Pass...");
+            
+            // Mencoba mengambil database (memicu koneksi di MongoManager)
+            if (MongoManager.getDatabase() != null) {
+                System.out.println("Koneksi Database Siap!");
+            }
 
-        // 2. Membuat data penghuni (Contoh data kamu)
-
-public class MainApp {
-    public static void main(String[] args) {
-        Penghuni p = new Penghuni();
-        p.setUidRfid("87654321");
-        p.setNim("24090028");
-        p.setNama("Dwi Riski Ariyanto");
-      DwiJava
-        p.setKamar("A-01");
-        p.setFakultas("Teknik");
-
-        // 3. Simpan data
-        penghuniDAO.save(p);
-
-        // 4. Tampilkan data yang tersimpan
-        System.out.println("\n--- Daftar Penghuni di Memori ---");
-        for (Penghuni data : penghuniDAO.findAll()) {
-            System.out.println("NIM: " + data.getNim() + " | Nama: " + data.getNama());
+            // 2. Memunculkan Tampilan Login secara responsif
+            java.awt.EventQueue.invokeLater(() -> {
+                new LoginView().setVisible(true);
+            });
+            
+        } catch (Exception e) {
+            // Jika database mati atau ada error sistem lainnya
+            JOptionPane.showMessageDialog(null, 
+                "Terjadi masalah saat memulai aplikasi:\n" + e.getMessage(), 
+                "Sistem Error", 
+                JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
         }
         p.setKamar("Asrama-01");
         p.setFakultas("Teknik");

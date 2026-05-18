@@ -1,64 +1,32 @@
-DwiJava
 package com.mycompany.h.pass.objects;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class LogAbsensi {
-    private String idLog;
-    private String uidRfid;
-    private LocalDateTime waktuTap;
+    private String nama;
+    private String kamar;
+    private String tipe;
+    private String waktu;
+    private Date waktu_asli;
     private String status;
 
     public LogAbsensi() {}
 
-    public LogAbsensi(String idLog, String uidRfid, LocalDateTime waktuTap, String status) {
-        this.idLog = idLog;
-        this.uidRfid = uidRfid;
-        this.waktuTap = waktuTap;
-        this.status = status;
-    }
+    public String getNama() { return nama; }
+    public void setNama(String nama) { this.nama = nama; }
 
-    // Getter & Setter
-    public String getIdLog() { return idLog; }
-    public void setIdLog(String idLog) { this.idLog = idLog; }
+    public String getKamar() { return kamar; }
+    public void setKamar(String kamar) { this.kamar = kamar; }
 
-    public String getUidRfid() { return uidRfid; }
-    public void setUidRfid(String uidRfid) { this.uidRfid = uidRfid; }
+    public String getTipe() { return tipe; }
+    public void setTipe(String tipe) { this.tipe = tipe; }
 
-    public LocalDateTime getWaktuTap() { return waktuTap; }
-    public void setWaktuTap(LocalDateTime waktuTap) { this.waktuTap = waktuTap; }
+    public String getWaktu() { return waktu; }
+    public void setWaktu(String waktu) { this.waktu = waktu; }
+
+    public Date getWaktu_asli() { return waktu_asli; }
+    public void setWaktu_asli(Date waktu_asli) { this.waktu_asli = waktu_asli; }
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
-package com.mycompany.h.pass.objects;
-
-import java.time.LocalDateTime;
-
-public class LogAbsensi {
-    private String idLog;
-    private String uidRfid;
-    private LocalDateTime waktuTap;
-    private String status;
-
-    public LogAbsensi() {}
-
-    public LogAbsensi(String idLog, String uidRfid, LocalDateTime waktuTap, String status) {
-        this.idLog = idLog;
-        this.uidRfid = uidRfid;
-        this.waktuTap = waktuTap;
-        this.status = status;
-    }
-    // Getter & Setter
-    public String getIdLog() { return idLog; }
-    public void setIdLog(String idLog) { this.idLog = idLog; }
-
-    public String getUidRfid() { return uidRfid; }
-    public void setUidRfid(String uidRfid) { this.uidRfid = uidRfid; }
-
-    public LocalDateTime getWaktuTap() { return waktuTap; }
-    public void setWaktuTap(LocalDateTime waktuTap) { this.waktuTap = waktuTap; }
-
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-  main
 }
